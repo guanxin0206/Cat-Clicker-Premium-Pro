@@ -55,7 +55,11 @@ var octopus = {
     },
     
     getCurrentCat: function(){
+        // console.log(model.currentCat.name);
+        // Maximum call stack size exceeded
+        // adminView.render();
         return model.currentCat;
+
     },
     
     //calls the array of cats.
@@ -157,6 +161,7 @@ var catListView = {
                 octopus.setCurrentCat(catCopy);
                 catView.render();
                 octopus.incrementCounter(); //increments cat clicker
+                adminView.render(); //自己加的一行
                 };
             })(cat));
 
@@ -179,6 +184,7 @@ var adminView = {
         
         this.adminBtn.addEventListener('click', function(){ //shows the admin display.
             octopus.adminDisplay();
+            
         });
         
         this.adminCancel.addEventListener('click', function(){ //hides the admin display without saving any new cat data.
@@ -201,6 +207,7 @@ var adminView = {
     
     show: function(){
             admin.style.display = 'block'; //shows the admin div on index.html
+            this.render();
         },
         
     hide: function(){
