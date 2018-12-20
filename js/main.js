@@ -189,8 +189,7 @@ var adminView = {
         
         this.adminCancel.addEventListener('click', function(){ //hides the admin display without saving any new cat data.
             octopus.adminCancel();
-        });
-        
+        });   
         this.adminSave.addEventListener('click', function(){ //hides the admin display and saves new cat data.
             octopus.adminSave();
         });
